@@ -40,8 +40,9 @@ public class CalculatorTest {
 	@Test
 	public final void testAddBoundary() {
 //	Cannot be below 0 OR above 9999
-		int a = 0;
+		int a = 100000;
 		int b = 0;
+		
 		
 		if (a >= 10000) {
 			int lengthA = Integer.toString(a).length();
@@ -59,10 +60,28 @@ public class CalculatorTest {
 	
 	@Test
 	public final void testAddError() {
-//	No letters or symbol or Null
-		String a = null;
+//	No String or Null or wrong result
+		int a = 12;
+		int b = 4;
 		
-		assertNull(a);
+		Calculator cal = new Calculator();
+		int actual = cal.add(a, b);
+		
+		int expected = 20;
+		assertNotEquals(expected,actual);
+//		------------------------------------------------------
+		String c = null;
+		
+		assertNull(c);
+//		------------------------------------------------------
+		String d = "2";
+		int e = 4;
+		
+		String actual2 = d + e;
+		
+		int expected2 = 6;
+		assertNotEquals(expected2,actual2);
+
 	}
 	@Test
 	public final void testSubtract() {
@@ -97,6 +116,24 @@ public class CalculatorTest {
 		}
 	
 	@Test
+	public final void testSubstractError() {
+//	No String or Null or wrong result
+		int a = 12;
+		int b = 4;
+		
+		Calculator cal = new Calculator();
+		int actual = cal.add(a, b);
+		
+		int expected = 20;
+		assertNotEquals(expected,actual);
+//		------------------------------------------------------
+		String c = null;
+		
+		assertNull(c);
+//		------------------------------------------------------
+	}
+	
+	@Test
 	public final void testMultiple() {
 		int a = 1000;
 		int b = 9;
@@ -129,6 +166,24 @@ public class CalculatorTest {
 		}
 	
 	@Test
+	public final void testMultipleError() {
+//	No String or Null or wrong result
+		int a = 12;
+		int b = 4;
+		
+		Calculator cal = new Calculator();
+		int actual = cal.add(a, b);
+		
+		int expected = 20;
+		assertNotEquals(expected,actual);
+//		------------------------------------------------------
+		String c = null;
+		
+		assertNull(c);
+//		------------------------------------------------------
+	}
+	
+	@Test
 	public final void testDivide() {
 		int a = 5555;
 		int b = 5;
@@ -157,7 +212,24 @@ public class CalculatorTest {
 			} else if (b <= 0) {
 				assertFalse("Is the numbers within the boundary?",(b >= 1));
 			}
-			
-		}
+	}
+			@Test
+			public final void testDivideError() {
+//			No String or Null or wrong result
+				int a = 12;
+				int b = 4;
+				
+				Calculator cal = new Calculator();
+				int actual = cal.add(a, b);
+				
+				int expected = 20;
+				assertNotEquals(expected,actual);
+//				------------------------------------------------------
+				String c = null;
+				
+				assertNull(c);
+//				------------------------------------------------------
 
-}
+			}
+		}
+	
